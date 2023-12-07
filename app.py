@@ -113,4 +113,4 @@ def convertmd():
         return render_template('copywebsite/convertmd.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
