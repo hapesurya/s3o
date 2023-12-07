@@ -1,0 +1,93 @@
+{% extends 'base-copywebsite.html' %}
+
+{% block body %}
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-12">
+          <h1>Salin Isi Website</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <form action="/converttxt" method="post">
+            <div class="mb-3">
+              <label class="form-label" for="urls"
+                >Enter URLs (one per line):</label
+              >
+              <div class="form-floating">
+                <textarea name="urls" class="form-control" id="urls"></textarea>
+                <label for="urls">Masukkan URL Sebanyak Anda Mau</label>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="css_selector"
+                >Enter CSS Selector:</label
+              >
+              <input
+                class="form-control"
+                placeholder="# untuk id . untuk class"
+                type="text"
+                name="css_selector"
+                id="css_selector"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="folder_baru"
+                >New Folder In Download/:</label
+              >
+              <input
+                class="form-control"
+                placeholder="Kosongkan jika ingin tersimpan di folder Download komputer Anda"
+                type="text"
+                name="folder_baru"
+                id="folder_baru"
+              />
+            </div>
+            <input
+              class="btn btn-outline-primary"
+              type="submit"
+              value="Proses Mulai"
+            />
+          </form>
+        </div>
+        <div class="col-md-6">
+          <h3>URL yang sedang diproses:</h3>
+          {% for result in results %}
+          <h5>{{ result.url }}</h5>
+          {% endfor %}
+          <div style="margin-top: 5vw"></div>
+          <h3>Hasilnya:</h3>
+          <!-- Add alert tags based on the data variable -->
+          {% for result in results %}
+          <div class="alert alert-success" role="alert">
+            {{ result.status }}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <figure class="text-center">
+            <blockquote class="blockquote">
+              <p>Aplikasi ini di atur untuk download sebanyak yang Anda mau. Dari hasil percobaan yang pernah dilakukan, aplikasi ini berhasil mendownload lebih dari 50 URL dalam satu kali proses.</p>
+            </blockquote>
+            <figcaption class="blockquote-footer">
+              With love from <cite title="Source Title">Admin</cite>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-md-12">
+          <p>
+            Jika merasa alat ini bermanfaat untuk Anda, jangan lupa sebarkan ke
+            orang lain.
+          </p>
+          <p>Yang punya uang lebih, silahkan traktir saya di sini</p>
+        </div>
+      </div>
+    </div>
+{% endblock %}
