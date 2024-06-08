@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/media/hendra/3f5b8f82-be4e-4dee-8b0f-f817a953c10f/@home/hape/Documents/Script-Python/Script-Python/Script_Python/VENV/FlaskVENV/copywebsite/venv"
+set -gx VIRTUAL_ENV "/home/hape/SCRIPTS/Script-Python/s3o/venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
