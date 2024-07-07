@@ -12,7 +12,7 @@
           <form action="/convertmd" method="post">
             <div class="mb-3">
               <label class="form-label" for="urls"
-                >Enter URLs (one per line):</label
+                >Enter URLs (split with comma for each URL):</label
               >
               <div class="form-floating">
                 <textarea name="urls" class="form-control" id="urls"></textarea>
@@ -33,15 +33,15 @@
               />
             </div>
             <div class="mb-3">
-              <label class="form-label" for="folder_baru"
+              <label class="form-label" for="output_folder"
                 >New Folder In Download/:</label
               >
               <input
                 class="form-control"
                 placeholder="Kosongkan jika ingin tersimpan di folder Download komputer Anda"
                 type="text"
-                name="folder_baru"
-                id="folder_baru"
+                name="output_folder"
+                id="output_folder"
               />
             </div>
             <input
@@ -52,7 +52,7 @@
           </form>
         </div>
         <div class="col-md-6">
-          <h3>URL yang sedang diproses:</h3>
+          <h3>URL yang berhasil diproses:</h3>
           {% for result in results %}
           <h5>{{ result.url }}</h5>
           {% endfor %}
